@@ -12,7 +12,7 @@ Base64 is a group of binary-to-text encoding schemes that represent binary data 
 <pre>Usage of base64.exe:
   -c int
         Columns (default 64)
-  -d    Decode instead Encode
+  -d    Decode instead of Encode
   -n    No padding
 </pre>
 
