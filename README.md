@@ -9,11 +9,11 @@
 Base64 is a group of binary-to-text encoding schemes that represent binary data (more specifically, a sequence of 8-bit bytes) in sequences of 24 bits that can be represented by four 6-bit Base64 digits. 
 
 ## Usage:
-<pre>Usage of base64.exe:
-  -c int
-        Columns (default 64)
+<pre>Usage of base64:
   -d    Decode instead of Encode
   -n    No padding
+  -w int
+        Wrap lines after N columns (default 64)
 </pre>
 
 This project is licensed under the ISC License.
