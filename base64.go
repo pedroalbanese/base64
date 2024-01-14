@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-	"strings"
 
 	b64 "encoding/base64"
 )
@@ -29,23 +28,13 @@ func main() {
 		}
 
 		inputData := string(data)
-		inputData = strings.TrimSuffix(inputData, "\r\n")
-		inputData = strings.TrimSuffix(inputData, "\n")
 
 		if *dec == false && *pad == false {
 			sEnc := b64.StdEncoding.EncodeToString([]byte(inputData))
 			fmt.Println(sEnc)
-		} else if *dec && *pad == false {
-			sDec, _ := b64.StdEncoding.DecodeString(inputData)
-			os.Stdout.Write(sDec)
-		}
-
-		if *dec == false && *pad == true {
+		} else if *dec == false && *pad == true {
 			sEnc := b64.StdEncoding.WithPadding(-1).EncodeToString([]byte(inputData))
 			fmt.Println(sEnc)
-		} else if *dec && *pad == true {
-			sDec, _ := b64.StdEncoding.WithPadding(-1).DecodeString(inputData)
-			os.Stdout.Write(sDec)
 		}
 	} else {
 		var inputData string
@@ -63,9 +52,6 @@ func main() {
 			}
 			inputData = string(data)
 		}
-
-		inputData = strings.TrimSuffix(inputData, "\r\n")
-		inputData = strings.TrimSuffix(inputData, "\n")
 
 		if *col != 0 {
 			if *dec == false && *pad == false {
